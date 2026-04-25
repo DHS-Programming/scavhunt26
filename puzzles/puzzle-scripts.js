@@ -1,0 +1,51 @@
+document.querySelectorAll('.overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) closeOverlay(this.id);
+  });
+});
+
+function openOverlay(id) {
+  document.getElementById(id).classList.add('active');
+}
+
+function closeOverlay(id) {
+  document.getElementById(id).classList.remove('active');
+}
+
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message.trim().toLowerCase());
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function decrypt(answer, encryptedB64) {
+  const raw = atob(encryptedB64);
+  const iv = new Uint8Array([...raw.slice(0, 16)].map(c => c.charCodeAt(0)));
+  const data = new Uint8Array([...raw.slice(16)].map(c => c.charCodeAt(0)));
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(answer.trim().toLowerCase().padEnd(16, '0').slice(0, 16)),
+    "AES-CBC", false, ["decrypt"]
+  );
+  const decrypted = await crypto.subtle.decrypt({ name: "AES-CBC", iv }, keyMaterial, data);
+  return new TextDecoder().decode(decrypted);
+}
+
+async function checkAnswer() {
+  const input = document.getElementById('code-input').value;
+  const hash = await sha256(input);
+  const msg = document.getElementById('result-msg');
+
+  if (hash === ANSWER_HASH) {
+    localStorage.setItem(`puzzle${PUZZLE_NUMBER}_complete`, 'true');
+    const clue = await decrypt(input, ENCRYPTED_CLUE);
+    msg.innerHTML = `Correct! Your next clue: <strong>${clue}</strong>`;
+    msg.className = 'result-correct';
+  } else {
+    msg.textContent = "Wrong answer, try again!";
+    msg.className = 'result-wrong';
+  }
+
+  openOverlay('submit-overlay');
+}

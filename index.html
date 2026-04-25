@@ -15,14 +15,23 @@
         <div class="spacer"></div>
         <a href="info.html" class="btn info">info!</a>
         <div class="spacer"></div>
-        <a href="puzzles/puzzle-1.html" class="btn">#1</a>
-        <a href="puzzles/puzzle-2.html" class="btn">#2</a>
-        <a href="puzzles/puzzle-3.html" class="btn">#3</a>
-        <a href="puzzles/puzzle-4.html" class="btn">#4</a>
-        <a href="puzzles/puzzle-5.html" class="btn">#5</a>
-        <a href="puzzles/puzzle-6.html" class="btn">#6</a>
+        <a href="puzzles/puzzle1.html" class="btn" data-puzzle="1">#1</a>
+        <a href="puzzles/puzzle2.html" class="btn" data-puzzle="2">#2</a>
+        <a href="puzzles/puzzle3.html" class="btn" data-puzzle="3">#3</a>
+        <a href="puzzles/puzzle4.html" class="btn" data-puzzle="4">#4</a>
+        <a href="puzzles/puzzle5.html" class="btn" data-puzzle="5">#5</a>
+        <a href="puzzles/puzzle6.html" class="btn" data-puzzle="6">#6</a>
         <div class="spacer"></div>
-        <a href="puzzles/puzzle-7.html" class="btn">#7</a>
+        <a href="puzzles/puzzle-7.html" class="btn" data-puzzle="7">#7</a>
     </div>
+
+    <script>
+        document.querySelectorAll('.btn[data-puzzle]').forEach(btn => {
+            const num = btn.getAttribute('data-puzzle');
+            if (localStorage.getItem(`puzzle${num}_complete`) === 'true') {
+            btn.classList.add('completed');
+            }
+        });
+    </script>
 </body>
 </html>

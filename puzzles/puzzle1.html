@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="puzzles-style.css">
+  <title>Puzzle 1</title>
+</head>
+<body>
+    <script>
+        const PUZZLE_NUMBER = 1;
+        const ANSWER_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+        const ENCRYPTED_CLUE = "X1wKYCekSZRLCxTKPYKbjAKG6C11ddlUSpULuq/vyD5tE8HoYu7MPBuNdymBnzHU";
+    </script>
+
+    <div class="header">
+        <h1>Puzzle 1</h1>
+        <button class="hint-btn" onclick="openOverlay('hint-overlay')">?</button>
+    </div>
+
+    <div class="puzzle-box">
+        puzzle description
+    </div>
+
+    <div class="code-row">
+        <label for="code-input">code:</label>
+        <input type="text" id="code-input" placeholder="SCAV{...}" autocomplete="off" />
+        <button class="submit-btn" onclick="checkAnswer()">submit</button>
+    </div>
+
+    <a href="../index.html" class="back-btn">Back</a>
+
+    <div class="overlay" id="hint-overlay">
+        <div class="overlay-card">
+        <button class="close-btn" onclick="closeOverlay('hint-overlay')">&#x2715;</button>
+        <h2>Hints</h2>
+        <p>...</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="submit-overlay">
+        <div class="overlay-card">
+        <button class="close-btn" onclick="closeOverlay('submit-overlay')">&#x2715;</button>
+        <h2>Result</h2>
+        <p id="result-msg"></p>
+        </div>
+    </div>
+
+    <script src="puzzle-scripts.js"></script>
+
+</body>
+</html>
