@@ -1,0 +1,67 @@
+:root {
+    --button-width: clamp(80px, 25vw, 300px);
+}
+
+body {
+    font-family: sans-serif;
+    background: #f5f4f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(1.2rem, 5vw, 3rem);
+}
+
+.grid {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, var(--button-width));
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--button-width);
+    height: clamp(50px, 15vw, 100px);
+    border: 1.5px solid #aaa;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1a1a1a;
+    font-size: clamp(0.85rem, 3vw, 1.3rem);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn:hover { 
+    background: #e8e6e0; 
+}
+
+.btn:active { 
+    transform: scale(0.97); 
+}
+
+.btn.info {
+    border-color: #378ADD;
+    color: #0C447C;
+    background: #E6F1FB;
+}
+
+.btn.info:hover { 
+    background: #B5D4F4; 
+}
+
+.spacer {
+    width: var(--button-width);
+    height: clamp(50px, 15vw, 100px);
+}
