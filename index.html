@@ -5,33 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css">
   <title>DHS Scavenger Hunt</title>
-
 </head>
-<body>
-    <div class="header">
-    <h1>DHS Programming Club<br>Scavenger Hunt</h1>
-    </div>
-    <div class="grid">
-        <div class="spacer"></div>
-        <a href="info.html" class="btn info">info!</a>
-        <div class="spacer"></div>
-        <a href="puzzles/puzzle1.html" class="btn" data-puzzle="1">#1</a>
-        <a href="puzzles/puzzle2.html" class="btn" data-puzzle="2">#2</a>
-        <a href="puzzles/puzzle3.html" class="btn" data-puzzle="3">#3</a>
-        <a href="puzzles/puzzle4.html" class="btn" data-puzzle="4">#4</a>
-        <a href="puzzles/puzzle5.html" class="btn" data-puzzle="5">#5</a>
-        <a href="puzzles/puzzle6.html" class="btn" data-puzzle="6">#6</a>
-        <div class="spacer"></div>
-        <a href="puzzles/puzzle7.html" class="btn" data-puzzle="7">#7</a>
-    </div>
+    <body>
+        <div class="header">
+            <h1>DHS Programming Club<br>Scavenger Hunt</h1>
+        </div>
 
-    <script>
-        document.querySelectorAll('.btn[data-puzzle]').forEach(btn => {
-            const num = btn.getAttribute('data-puzzle');
-            if (localStorage.getItem(`puzzle${num}_complete`) === 'true') {
-            btn.classList.add('completed');
-            }
-        });
-    </script>
-</body>
+        <div class="grid">
+            <div class="spacer"></div>
+            <a href="info.html" class="btn info">info!</a>
+            <div class="spacer"></div>
+            <a href="puzzles/puzzle1.html" class="btn" data-puzzle="1">#1</a>
+            <a href="puzzles/puzzle2.html" class="btn" data-puzzle="2">#2</a>
+            <a href="puzzles/puzzle3.html" class="btn" data-puzzle="3">#3</a>
+            <a href="puzzles/puzzle4.html" class="btn" data-puzzle="4">#4</a>
+            <a href="puzzles/puzzle5.html" class="btn" data-puzzle="5">#5</a>
+            <a href="puzzles/puzzle6.html" class="btn" data-puzzle="6">#6</a>
+            <div class="spacer"></div>
+            <a href="puzzles/puzzle7.html" class="btn" data-puzzle="7">#7</a>
+        </div>
+
+        <a href="submit.html" class="btn submit-final" id="final-submit" style="display:none">
+            Submit !!
+        </a>
+
+        <script src="scripts.js"></script>
+    </body>
 </html>

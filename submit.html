@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Submit</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Submit Entry</h1>
+        </div>
+
+        <div class="blocked" id="blocked" style="display:none">
+            <p>You haven't completed all the puzzles yet!</p>
+        </div>
+
+        <div class="submit-box" id="submit-section" style="display:none">
+            <p>Congratulations on completing all puzzles!</p>
+            <label>
+                Full Name
+                <input type="text" id="name-input" autocomplete="off" />
+            </label>
+            
+            <p class="name-error" id="name-error"></p>
+
+            <button class="submit-btn" id="generate-btn">Generate My Unique Submission ID</button>
+
+            <div class="code-section" id="code-section" style="display:none">
+                <p>Your unique submission ID. Copy this exactly into the form:</p>
+                <div class="code-display" id="submission-code"></div>
+                <div style="text-align: center;">
+                    <a class="form-link" href="https://forms.gle/e9nKQbiEd86HH6FQ7" target="_blank">
+                        Open Submission Form
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <a href="index.html" class="back-btn">← Back</a>
+
+    <script src="scripts.js"></script>
+    </body>
+</html>
