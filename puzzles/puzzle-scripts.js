@@ -39,6 +39,7 @@ async function checkAnswer() {
 
   if (hash === ANSWER_HASH) {
     localStorage.setItem(`puzzle${PUZZLE_NUMBER}_complete`, 'true');
+    localStorage.setItem(`puzzle${PUZZLE_NUMBER}_answer`, input.trim().toLowerCase());
     const clue = await decrypt(input, ENCRYPTED_CLUE);
     msg.innerHTML = `Correct! Your next clue: <strong>${clue}</strong>`;
     msg.className = 'result-correct';
