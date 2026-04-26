@@ -9,12 +9,13 @@ body {
     gap: 1.5rem;
 }
 
-.header{
+.header {
     width: 100%;
     max-width: 700px;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 50px;
 }
 
@@ -24,6 +25,8 @@ h1 {
 }
 
 .hint-btn {
+    position: absolute;
+    right: 0;
     width: clamp(36px, 8vw, 48px);
     height: clamp(36px, 8vw, 48px);
     border: 1.5px solid #aaa;
@@ -166,3 +169,51 @@ h1 {
 .back-btn:hover { 
     background: #e8e6e0; 
 }
+
+.gate {
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    border: 1.5px solid #aaa;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: #1a1a1a;
+}
+
+.gate p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.gate-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.gate-row input {
+    padding: 0.4rem 0.6rem;
+    border: 1.5px solid #aaa;
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    background: #f5f4f0;
+    color: #1a1a1a;
+    min-width: 0;
+    flex: 1;
+    max-width: 300px;
+}
+
+.gate-error {
+    color: #A32D2D;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    margin-top: 0.75rem;
+}
+
+#not-complete-gate, #key-gate, .puzzle-content {
+    display: none;
+}
+

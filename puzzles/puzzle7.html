@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="puzzles-style.css">
+  <title>Puzzle 7</title>
+</head>
+<body>
+  <script>
+    const PUZZLE_NUMBER = 7;
+    const ANSWER_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+    const ENCRYPTED_CLUE = "rWd6alkpaSYqNsLeT4QP8zI7tLjrMJnCO5A0wZQYApw=";
+    const KEY_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+  </script>
+
+  <div class="header">
+    <h1>Puzzle 7</h1>
+    <button class="hint-btn" id="hint-button" onclick="openOverlay('hint-overlay')" style="display:none">?</button>
+  </div>
+
+  <div class="gate" id="not-complete-gate">
+    <p>You need to complete Puzzle 6 before you can access this puzzle!</p>
+  </div>
+
+  <div class="gate" id="key-gate">
+    <p>Enter the key from Puzzle 6 to unlock this puzzle.</p>
+    <div class="gate-row">
+      <input type="text" id="key-input" placeholder="enter key..." autocomplete="off" />
+      <button class="submit-btn" onclick="checkKey()">unlock</button>
+    </div>
+    <p class="gate-error" id="key-error"></p>
+  </div>
+
+  <div class="puzzle-content">
+      <div class="puzzle-box">
+        puzzle 7 description goes here
+      </div>
+      <div class="code-row" style="margin-top: 1.5rem;">
+        <label for="code-input">code:</label>
+        <input type="text" id="code-input" placeholder="SCAV{...}" autocomplete="off" />
+        <button class="submit-btn" onclick="checkAnswer()">submit</button>
+      </div>
+  </div>
+
+  <a href="../index.html" class="back-btn">Back</a>
+
+  <div class="overlay" id="hint-overlay">
+    <div class="overlay-card">
+      <button class="close-btn" onclick="closeOverlay('hint-overlay')">&#x2715;</button>
+      <h2>Hints</h2>
+      <p>...</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="submit-overlay">
+    <div class="overlay-card">
+      <button class="close-btn" onclick="closeOverlay('submit-overlay')">&#x2715;</button>
+      <h2>Result</h2>
+      <p id="result-msg"></p>
+    </div>
+  </div>
+
+  <script src="puzzle-scripts.js"></script>
+</body>
+</html>

@@ -49,3 +49,43 @@ async function checkAnswer() {
 
   openOverlay('submit-overlay');
 }
+
+async function checkKey() {
+  const input = document.getElementById('key-input').value;
+  const hash = await sha256(input);
+  if (hash === KEY_HASH) {
+    showPuzzle();
+  } else {
+    document.getElementById('key-error').textContent = 'Incorrect key, try again.';
+  }
+}
+
+function showPuzzle() {
+  document.getElementById('key-gate').style.display = 'none';
+  document.querySelector('.puzzle-content').style.display = 'contents';
+  const hintBtn = document.getElementById('hint-button');
+  if (hintBtn) hintBtn.style.display = '';
+}
+
+function initGates() {
+  const notCompleteGate = document.getElementById('not-complete-gate');
+  const keyGate = document.getElementById('key-gate');
+  if (!notCompleteGate || !keyGate) return;
+
+  const prevDone = localStorage.getItem(`puzzle${PUZZLE_NUMBER - 1}_complete`) === 'true';
+
+  if (!prevDone) {
+    notCompleteGate.style.display = 'block';
+  } else {
+    keyGate.style.display = 'block';
+  }
+
+  const keyInput = document.getElementById('key-input');
+  if (keyInput) {
+    keyInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkKey();
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initGates);
