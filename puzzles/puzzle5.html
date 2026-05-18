@@ -9,9 +9,9 @@
 <body>
   <script>
     const PUZZLE_NUMBER = 5;
-    const ANSWER_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
-    const ENCRYPTED_CLUE = "rWd6alkpaSYqNsLeT4QP8zI7tLjrMJnCO5A0wZQYApw=";
-    const KEY_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+    const ANSWER_HASH = "d87a789ddd211b7e6a5a2301ee248b497446aeaf21e3af959b5468e9a52b9d22";
+    const ENCRYPTED_CLUE = "PIeYAymXntY73gbtOvYoBs5k98D8uTwABppuHrZpmxXq72eyE6yv0xyOBptvcKQddNAuQ3x6XS+S5OtzQcvsPE6cXB67KXrzZBSkGma8ua1Va3SpdoTmHAjbmKVgcbQTx1WDtgU7ardSn06bTo2KjMGffbaHSnkoI5iDGgP01NjRCAd3YWD4VqwCLxbD1hSD";
+    const KEY_HASH = "4ba3e8e3765f2970eb37fae535353dd623d40a0507848c3c1dd240a5a7eb995e";
   </script>
 
   <div class="header">
@@ -34,11 +34,21 @@
 
   <div class="puzzle-content">
       <div class="puzzle-box">
-        puzzle 5 description goes here
+        Look into the project below and see what you can find! Maybe there are parts to a hidden ID, if you're lucky...<br><br>
+        <iframe
+          src="https://scratch.mit.edu/projects/1309718817/embed"
+          allowtransparency="true"
+          width="485"
+          height="402"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen
+          style="display:block; margin:0 auto;">
+        </iframe>
       </div>
       <div class="code-row" style="margin-top: 1.5rem;">
         <label for="code-input">code:</label>
-        <input type="text" id="code-input" placeholder="SCAV{...}" autocomplete="off" />
+        <input type="text" id="code-input" placeholder="PCSHID{...}" autocomplete="off" />
         <button class="submit-btn" onclick="checkAnswer()">submit</button>
       </div>
   </div>
@@ -49,7 +59,7 @@
     <div class="overlay-card">
       <button class="close-btn" onclick="closeOverlay('hint-overlay')">&#x2715;</button>
       <h2>Hints</h2>
-      <p>...</p>
+      <p>Don't trust everything the project says! Make sure you look through <em>everything</em> in the project even including the code itself.</p>
     </div>
   </div>
 

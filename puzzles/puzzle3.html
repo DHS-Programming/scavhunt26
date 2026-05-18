@@ -9,9 +9,9 @@
 <body>
   <script>
     const PUZZLE_NUMBER = 3;
-    const ANSWER_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
-    const ENCRYPTED_CLUE = "rWd6alkpaSYqNsLeT4QP8zI7tLjrMJnCO5A0wZQYApw=";
-    const KEY_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+    const ANSWER_HASH = "b67acb7f765470f5831ec9e7cb4b4a5d801e6451aa005e3a3e9e89e3a02b9393";
+    const ENCRYPTED_CLUE = "XhR9BrWBdCp8asxtDO1oZZXYqFu95rzpSbZK+VKJHXQoMJpm8viHBzXP1+1677CC0FGQHJjfyu25XnX6QiTNGuXFYHjyN7EPj3bc5Ypu/Gs=";
+    const KEY_HASH = "1bc04b5291c26a46d918139138b992d2de976d6851d0893b0476b85bfbdfc6e6";
   </script>
 
   <div class="header">
@@ -34,11 +34,12 @@
 
   <div class="puzzle-content">
       <div class="puzzle-box">
-        puzzle 3 description goes here
+        Hmm, I wonder if there is anything <em>inside</em> of this image?<br><br>
+        <img src="puzzle3.png" alt="A perfectly ordinary image. Nothing to see here." style="max-width:100%; border-radius:6px;" />
       </div>
       <div class="code-row" style="margin-top: 1.5rem;">
         <label for="code-input">code:</label>
-        <input type="text" id="code-input" placeholder="SCAV{...}" autocomplete="off" />
+        <input type="text" id="code-input" placeholder="PCSHID{...}" autocomplete="off" />
         <button class="submit-btn" onclick="checkAnswer()">submit</button>
       </div>
   </div>
@@ -49,7 +50,10 @@
     <div class="overlay-card">
       <button class="close-btn" onclick="closeOverlay('hint-overlay')">&#x2715;</button>
       <h2>Hints</h2>
-      <p>...</p>
+      <ol style="padding-left:1.2rem; line-height:2;">
+        <li>I wish there was a way to see <em>inside</em> of a file...</li>
+        <li>I think Caesar had something to do with this.</li>
+      </ol>
     </div>
   </div>
 

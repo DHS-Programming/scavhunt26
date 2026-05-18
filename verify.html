@@ -1,0 +1,20 @@
+<!-- verify.html — keep this local, never push to your repo -->
+<input id="name" placeholder="submitted name" />
+<button onclick="verify()">Check</button>
+<p id="result"></p>
+
+<script>
+  const ANSWERS = ['hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello'];
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  async function verify() {
+    const name = document.getElementById('name').value.trim().toLowerCase();
+    const combined = name + ANSWERS.join('');
+    const code = (await sha256(combined)).slice(0, 12).toUpperCase();
+    document.getElementById('result').textContent = `Expected code: ${code}`;
+  }
+</script>

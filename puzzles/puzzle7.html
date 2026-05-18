@@ -9,9 +9,9 @@
 <body>
   <script>
     const PUZZLE_NUMBER = 7;
-    const ANSWER_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
-    const ENCRYPTED_CLUE = "rWd6alkpaSYqNsLeT4QP8zI7tLjrMJnCO5A0wZQYApw=";
-    const KEY_HASH = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+    const ANSWER_HASH = "afc926afa93c41ee72d55bbe804c89772b08c765f936044eb10dafdf8e2fdfc1";
+    const ENCRYPTED_CLUE = "rHshDf1sZe+3XjQTLQrlkP5fV19tWsbeC5yFQ79uW4oGRy4ThJiFmHqNqxaJR+mFxMWbWD7C0hnV0BsOT/ieGbTA95ewDrrWmUVYPsLRFk2vANczmKqlUIsv5gVMmPEY=";
+    const KEY_HASH = "2ad562319767157087dda0dec6391f4479f8a04869ab0cc8d3a9c3637dae73b5";
   </script>
 
   <div class="header">
@@ -34,7 +34,18 @@
 
   <div class="puzzle-content">
       <div class="puzzle-box">
-        puzzle 7 description goes here
+        Eight letters are scattered across this image — each one a different color. Can you unscramble them into a real word? Once you have the word, take the hex color codes of the letters <em>in that order</em> and string them together. That string is your answer code.<br><br>
+ 
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto;background:#fafafa;border-radius:6px;">
+          <text x="195" y="217" font-size="72" fill="#504353" font-family="serif" font-weight="bold">C</text>
+          <text x="342" y="101" font-size="64" fill="#484944" font-family="serif" font-weight="bold">O</text>
+          <text x="446" y="332" font-size="56" fill="#7B6833" font-family="serif" font-weight="bold">N</text>
+          <text x="612" y="185" font-size="60" fill="#785F63" font-family="serif" font-weight="bold">F</text>
+          <text x="280" y="440" font-size="68" fill="#306433" font-family="serif" font-weight="bold">U</text>
+          <text x="90" y="390" font-size="58" fill="#355F34" font-family="serif" font-weight="bold">S</text>
+          <text x="555" y="500" font-size="62" fill="#72335F" font-family="serif" font-weight="bold">E</text>
+          <text x="390" y="560" font-size="54" fill="#66756E" font-family="serif" font-weight="bold">D</text>
+        </svg>
       </div>
       <div class="code-row" style="margin-top: 1.5rem;">
         <label for="code-input">code:</label>
@@ -49,7 +60,10 @@
     <div class="overlay-card">
       <button class="close-btn" onclick="closeOverlay('hint-overlay')">&#x2715;</button>
       <h2>Hints</h2>
-      <p>...</p>
+      <ol style="padding-left:1.2rem; line-height:2.2;">
+        <li>Try unscrambling the 8 letters first - what common English word can they spell?</li>
+        <li>Once you have the word, look up the hex color code of each letter <em>in word order</em> and concatenate them all. That's your code (without any # symbols or spaces).</li>
+      </ol>
     </div>
   </div>
 
